@@ -1,0 +1,11 @@
+#description 
+prototype of a javascript quiz with 'dynamic' questions
+
+#considerations
+* question builder could use 'slots' of an array to store constructs in, rather than a long string concatenation
+* there is going to need to be a 'rules' concept regarding how each type of construct is allowed to fill the slots
+    - this is likely to be the most consuming part of the project, what can make this more achievable?
+    - ECMAScript specification 
+    - limited use of constructs, gradually build
+    - testing is going to be essential
+* the question should be rejected if it fails (try, catch?) though ideally only 'valid' questions are generated

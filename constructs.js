@@ -14,6 +14,20 @@ var constructs = {
         undeclared: function(){
             return ["y = 1;"];
         }
+    },
+    assertions: {
+        equal: function(){
+            return ["assertTrue(x == y);"];
+        },
+        notEqual: function(){
+            return ["assertTrue(x != y);"];
+        },
+        equalWithType: function(){
+            return ["assertTrue(x === y);"];
+        },
+        notEqualWithType: function(){
+            return ["assertTrue(x !== y);"];
+        }
     }
 };
 

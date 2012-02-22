@@ -5,9 +5,11 @@ function questionTagWrap(question) {
 function makeQuestion(questionCode) {
     var fnWrapper = Utils.getRandomObjectMemberValue(constructs.fnWrappers)();
     var variableAssignment = Utils.getRandomObjectMemberValue(constructs.variableAssignments)();
-    questionCode += fnWrapper[0];
-    questionCode += variableAssignment[0];
-    questionCode += fnWrapper[1];
+    var assertion = Utils.getRandomObjectMemberValue(constructs.assertions)();
+    questionCode += fnWrapper[0] += "\n";
+    questionCode += "\t" + variableAssignment[0] + "\n";
+    questionCode += "\t" + assertion[0] + "\n";
+    questionCode += fnWrapper[1] + "\n";
     return questionCode;
 }
 
@@ -16,8 +18,8 @@ function writeToDom (question, element){
     el.innerHTML = questionTagWrap(question);
 }
 
+var question = "";
 function init(){
-    var question = "";
     writeToDom(makeQuestion(question));
 }
 
